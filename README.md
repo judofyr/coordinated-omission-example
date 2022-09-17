@@ -55,7 +55,7 @@ go func() {
 - We keep the lock for 2 second.
 - And then we release the lock again.
 
-Our system is **completely unresponsible** for _two seconds_.
+Our system is **completely unresponsive** for _two seconds_.
 We're doing _nothing_ 20% of the time.
 What a horrible system!
 Within the 20%-period we expect request to take one second on average:
