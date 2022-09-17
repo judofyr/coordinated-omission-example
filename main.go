@@ -12,7 +12,7 @@ var lock sync.RWMutex
 func main() {
 	go func() {
 		for {
-			time.Sleep(10*time.Second)
+			time.Sleep(8*time.Second)
 			lock.Lock()
 			time.Sleep(2*time.Second)
 			lock.Unlock()
