@@ -119,6 +119,9 @@ Adjusted latency:   1-->   2-->   3-------->
 
 - The bars at the top represents when we _want_ the requests to fire.
   They run at a constant rate.
+- "Measured latency" is how we actually send requests to the server.
+  We're using a single connection so we can only send one request at a time.
+  "Adjusted latency" is how wrk2 will _actually_ report the latency.
 - The first two requests were completed swiftly.
 - The third request took so long that we weren't able to send the fourth request at the right time. 
   The _server_ was able to process the fourth request in "7 dashes", but from the _client's_ perspective it took "10 dashes" to complete it.
@@ -126,3 +129,4 @@ Adjusted latency:   1-->   2-->   3-------->
 
 Another way of thinking about this is that you have a web browser which can only have one open connection to the server and we want to send a constant rate of requests.
 Obviously we need to include "waiting until the connection becomes available" if we want to measure the time it takes to complete a request.
+Who cares that it took one minute to buy a concert ticket if you were in the line for hours?
